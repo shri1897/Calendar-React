@@ -1,8 +1,10 @@
 import React from 'react'
+import BodyMonth from './BodyMonth'
+
 
 function CalendarBody() {
     return (
-        <h1> BODY!</h1>
+        <BodyMonth />
     );
 }
 
