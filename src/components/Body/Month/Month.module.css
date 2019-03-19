@@ -47,21 +47,22 @@
   width: 900px;
   margin-left: 178px;
   border: 3px solid #272727;
-
+  align-content: center;
   }
 
   .gridItem {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 25px;
+    height: 60px;
+    max-height: 60px;
+    font-size: 20px;
     text-align: center;
+    padding-top: 20px;
   }
   .dayGridColumn {
     background-color: #bbe8aa;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 10px;
-
     font-size: 16px;
     text-align: center;
   }

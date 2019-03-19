@@ -38,15 +38,16 @@ class BodyMonth extends React.Component {
         }
     }
     render() {
-        let box = [];
-        for (let i = 1; i <= 49; i++) {
-            box.push(i);
+        let boxes = [];
+        let numberOfDays = Month.getNumberOfDays(this.state.date);
+        let firstDayOfMonth = Month.getfirstDayOfMonth(this.state.date);
+        for (let i = 1, j = 1; i <= 42; i++) {
+            let box = <div className={Styles.gridItem} key={[i]}></div>;
+            if (i > firstDayOfMonth && j <= numberOfDays) {
+                box = <div className={Styles.gridItem} key={[i]}>{j++}</div>
+            }
+            boxes.push(box);
         }
-
-        let boxes = box.map((item, index) => {
-            return (<div className={Styles.gridItem} key={[index]}>{item}</div>)
-
-        });
 
         return (
             <>
