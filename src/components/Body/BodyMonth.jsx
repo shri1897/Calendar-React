@@ -1,9 +1,9 @@
 import React from 'react'
 import './BodyMonth.css'
 
-var box = [];
 class BodyMonth extends React.Component {
     render() {
+        var box = [];
         for (let i = 1; i <= 49; i++) {
             box.push(i);
         }
@@ -14,7 +14,7 @@ class BodyMonth extends React.Component {
         });
 
         return (
-            <div class="grid-container">
+            <div className="grid-container">
                 {boxes}
             </div>
         );

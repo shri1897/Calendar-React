@@ -1,15 +1,26 @@
-import React from 'react';
-import Styles from './CalendarManager.module.css'
+import React, { Component } from 'react';
+import './CalendarManager.module.css'
 import CalendarHeader from './Header/CalendarHeader'
 import CalendarBody from './Body/CalendarBody'
 
-function CalendarManager() {
-    return (
-        <>
-            <CalendarHeader />
-            <CalendarBody />
-        </>
-    );
+class CalendarManager extends Component {
+
+    state = {
+        bodyType: null
+    }
+
+    changeBodyType = (bodyType) => {
+        this.setState({ bodyType });
+    }
+
+    render() {
+        return (
+            <>
+                <CalendarHeader changeBodyType={this.changeBodyType} />
+                <CalendarBody bodyType={this.state.bodyType} />
+            </>
+        );
+    }
 }
 
 export default CalendarManager;
