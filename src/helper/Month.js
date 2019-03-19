@@ -136,4 +136,18 @@ Month.getfirstDayOfMonth = function (dateObject) {
     return firstDate.getDay();
 }
 
+Month.isCurrentDate = function (dateObject, date) {
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+    let CurrentDate = new Date().getDate();
+    let year = dateObject.getFullYear();
+    let month = dateObject.getMonth();
+    if (year === currentYear && month === currentMonth && date === CurrentDate) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
 export default Month;

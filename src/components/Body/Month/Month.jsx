@@ -4,7 +4,8 @@ import Month from '../../../helper/Month'
 
 class BodyMonth extends React.Component {
     state = {
-        date: new Date()
+        date: new Date(),
+        today: new Date()
     }
 
     changeMonth(actionType) {
@@ -44,7 +45,11 @@ class BodyMonth extends React.Component {
         for (let i = 1, j = 1; i <= 42; i++) {
             let box = <div className={Styles.gridItem} key={[i]}></div>;
             if (i > firstDayOfMonth && j <= numberOfDays) {
-                box = <div className={Styles.gridItem} key={[i]}>{j++}</div>
+                if (Month.isCurrentDate(this.state.date, j)) {
+                    box = <div className={Styles.gridItemCurrentDate} key={[i]}>{j++}</div>
+                } else {
+                    box = <div className={Styles.gridItem} key={[i]}>{j++}</div>
+                }
             }
             boxes.push(box);
         }
