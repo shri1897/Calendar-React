@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CalenderManager from './components/CalenderManager'
+import CalendarManager from './components/CalendarManager'
 
-ReactDOM.render(<CalenderManager />, document.getElementById('calendar-container'));
+ReactDOM.render(<CalendarManager />, document.getElementById('calendar-container'));

@@ -1,0 +1,28 @@
+.CalendarHeader {
+    display: flex;
+    background: #33b41f;
+    justify-content: center;
+    flex-Direction: row;
+    height: 30px;
+    width: 100%;
+    margin: 0px 0px 1px 0px;
+}
+
+.Button {
+    color: #ffffff;
+    background-color: #303030;
+    border: 1px solid black;
+    border-radius: 6px;
+    min-width: 100px;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    margin: 0px 1px 0px 1px;
+}
+
+.Button:hover {
+    color: #56ff3b;
+    background-color: #202020;
+    font-size: 14px;
+}
