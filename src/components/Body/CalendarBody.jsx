@@ -1,11 +1,11 @@
 import React from 'react'
-import BodyMonth from './BodyMonth'
+import Month from './Month/Month'
 
 
 function CalendarBody(props) {
     let display = null;
     if (props.bodyType === 'MONTH') {
-        display = <BodyMonth />;
+        display = <Month />;
     }
     return (
         <>

@@ -1,14 +1,15 @@
-.CalendarHeader {
+.calendarHeader {
     display: flex;
-    background: #33b41f;
+    background: #2ca200e3;
     justify-content: center;
     flex-Direction: row;
-    height: 30px;
+    height: 55px;
     width: 100%;
-    margin: 0px 0px 1px 0px;
+    padding: 2px;
+    margin: 0px 0px 20px 0px;
 }
 
-.Button {
+.button {
     color: #ffffff;
     background-color: #303030;
     border: 1px solid black;
@@ -21,7 +22,7 @@
     margin: 0px 1px 0px 1px;
 }
 
-.Button:hover {
+.button:hover {
     color: #56ff3b;
     background-color: #202020;
     font-size: 14px;
