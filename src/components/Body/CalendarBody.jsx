@@ -2,9 +2,15 @@ import React from 'react'
 import BodyMonth from './BodyMonth'
 
 
-function CalendarBody() {
+function CalendarBody(props) {
+    let display = null;
+    if (props.bodyType === 'MONTH') {
+        display = <BodyMonth />;
+    }
     return (
-        <BodyMonth />
+        <>
+            {display}
+        </>
     );
 }
 
