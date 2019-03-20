@@ -6,7 +6,7 @@ import CalendarBody from './Body/CalendarBody'
 class CalendarManager extends Component {
 
     state = {
-        bodyType: null
+        bodyType: 'MONTH'
     }
 
     changeBodyType = (bodyType) => {
