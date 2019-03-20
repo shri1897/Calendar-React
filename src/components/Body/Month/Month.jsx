@@ -20,10 +20,9 @@ class BodyMonth extends React.Component {
                     let date = new Date(this.state.date);
                     date.setMonth(this.state.date.getMonth() - 1);
                     this.setState({ date });
-
                     break;
                 }
-            case 'TODAY':
+            case 'NOW':
                 {
                     this.setState({ date: new Date() });
                     break;
@@ -33,13 +32,11 @@ class BodyMonth extends React.Component {
                     let date = new Date(this.state.date);
                     date.setMonth(this.state.date.getMonth() + 1);
                     this.setState({ date });
-
                     break;
                 }
             default:
                 {
-
-                    break;
+                    throw new Error('Invalid Action Type');
                 }
         }
     }
@@ -72,7 +69,7 @@ class BodyMonth extends React.Component {
                     </div>
                     {this.state.displayPicker ? <div className={Styles.monthSelector}>
                         <button className={Styles.button} onClick={() => this.changeMonth('PREVIOUS')}>{'<'}</button>
-                        <button className={Styles.button} onClick={() => this.changeMonth('TODAY')}>{'Today'}</button>
+                        <button className={Styles.button} onClick={() => this.changeMonth('NOW')}>{'NOW'}</button>
                         <button className={Styles.button} onClick={() => this.changeMonth('NEXT')}>{'>'}</button>
                     </div> : null}
                 </div>
