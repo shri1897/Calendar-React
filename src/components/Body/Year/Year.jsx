@@ -5,7 +5,6 @@ import Month from '../Month/Month'
 
 class Year extends React.Component {
 
-
     render() {
         let container = [];
 

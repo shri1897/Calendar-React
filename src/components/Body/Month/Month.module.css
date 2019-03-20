@@ -1,16 +1,16 @@
 .monthDetailContainer {
   display: flex;
+  align-items: center;
   flex-flow: row wrap;
   background: #2b2b2b;
   box-shadow: -2px 6px 13px 2px;
+  height: 8%;
 
 }
 
 .displayMonth {
   color: #1cd300;
-  font-size: 20px;
   padding-left: 80px;
-  height: 8%;
 }
 
 .monthSelector {
@@ -64,6 +64,7 @@
     border: 1px solid rgba(0, 0, 0, 0.8);
     text-align: center;
     color: orangered;
+    font-weight: 600;
   }
   .dayGridColumn {
     display: flex;
