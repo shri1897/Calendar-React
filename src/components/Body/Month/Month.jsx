@@ -5,7 +5,6 @@ import Month from '../../../helper/Month'
 class BodyMonth extends React.Component {
     state = {
         date: new Date(),
-        today: new Date(),
         displayPicker: false
     }
 
