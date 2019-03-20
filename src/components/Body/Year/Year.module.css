@@ -1,14 +1,13 @@
 .gridContainer {
+  display: flex;
+  justify-content: space-around;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
+    row-gap: 10px;
     background-color: #2b2b2b;
-    padding: 10px;
+    overflow: hidden;
   }
-  
-  .gridContainer > div {
-    background-color: floralwhite;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+  .monthContainer {
+    width: 290px;
+    height: 210px;
   }

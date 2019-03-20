@@ -70,7 +70,6 @@ Month.getNumberOfDays = function (dateObject) {
         case 1:
             {
                 let year = dateObject.getFullYear();
-                console.log(year);
                 if (year % 4 === 0) {
                     if (year % 400 === 0) {
                         return 29;

@@ -1,7 +1,7 @@
 import React from 'react'
 import Month from './Month/Month'
 import Year from './Year/Year'
-
+import Styles from './CalendarBody.module.css'
 function CalendarBody(props) {
     let display = renderBodyType(props);
     return (
@@ -25,7 +25,11 @@ function renderBodyType(props) {
             }
         case 'MONTH':
             {
-                return <Month />;
+                return (
+                    <div className={Styles.monthContainer}>
+                        <Month setDate={new Date()} displayPicker={true} />
+                    </div>
+                );
             }
         case 'YEAR':
             {
