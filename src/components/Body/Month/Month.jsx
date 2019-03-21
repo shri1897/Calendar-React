@@ -9,7 +9,13 @@ class BodyMonth extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ date: this.props.setDate, displayPicker: this.props.displayPicker });
+        this.setState({ date: this.props.date, displayPicker: this.props.displayPicker });
+    }
+
+    componentDidUpdate() {
+        if (this.state.date.getFullYear() !== this.props.date.getFullYear()) {
+            this.setState({ date: this.props.date, displayPicker: this.props.displayPicker });
+        }
     }
 
     changeMonth(actionType) {
@@ -18,11 +24,13 @@ class BodyMonth extends React.Component {
                 {
                     let date = new Date(this.state.date);
                     date.setMonth(this.state.date.getMonth() - 1);
+                    this.props.setGlobalDate(date);
                     this.setState({ date });
                     break;
                 }
             case 'NOW':
                 {
+                    this.props.setGlobalDate(new Date());
                     this.setState({ date: new Date() });
                     break;
                 }
@@ -30,6 +38,7 @@ class BodyMonth extends React.Component {
                 {
                     let date = new Date(this.state.date);
                     date.setMonth(this.state.date.getMonth() + 1);
+                    this.props.setGlobalDate(date);
                     this.setState({ date });
                     break;
                 }
@@ -39,6 +48,7 @@ class BodyMonth extends React.Component {
                 }
         }
     }
+
     render() {
         let boxes = [];
         let numberOfDays = Month.getNumberOfDays(this.state.date);
@@ -48,7 +58,7 @@ class BodyMonth extends React.Component {
                 break;
             }
             for (let column = 0; column < 7; column += 1) {
-                let box = <div className={Styles.gridItem} key={`${row}${column}`}></div>;
+                let box = <div className={Styles.gridItemEmpty} key={`${row}${column}`}></div>;
                 if ((row !== 0 || column >= firstDayOfMonth) && j <= numberOfDays) {
                     if (Month.isCurrentDate(this.state.date, j)) {
                         box = <div className={Styles.gridItemCurrentDate} key={`${row}${column}`}>{j++}</div>
@@ -64,7 +74,9 @@ class BodyMonth extends React.Component {
             <>
                 <div className={Styles.monthDetailContainer}>
                     <div className={Styles.displayMonth}>
-                        {`${Month.toString(this.state.date)} ${this.state.date.getFullYear()}`}
+                        {this.state.displayPicker ?
+                            `${Month.toString(this.state.date)} ${this.state.date.getFullYear()}`
+                            : `${Month.toString(this.state.date)}`}
                     </div>
                     {this.state.displayPicker ? <div className={Styles.monthSelector}>
                         <button className={Styles.button} onClick={() => this.changeMonth('PREVIOUS')}>{'<'}</button>

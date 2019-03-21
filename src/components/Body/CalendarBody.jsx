@@ -27,13 +27,13 @@ function renderBodyType(props) {
             {
                 return (
                     <div className={Styles.monthContainer}>
-                        <Month setDate={new Date()} displayPicker={true} />
+                        <Month date={props.date} setGlobalDate={props.setGlobalDate} displayPicker={true} />
                     </div>
                 );
             }
         case 'YEAR':
             {
-                return <Year />;
+                return <Year date={props.date} setGlobalDate={props.setGlobalDate} />;
             }
         default:
             {

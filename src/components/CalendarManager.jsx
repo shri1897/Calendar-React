@@ -6,18 +6,23 @@ import CalendarBody from './Body/CalendarBody'
 class CalendarManager extends Component {
 
     state = {
-        bodyType: 'MONTH'
+        bodyType: 'MONTH',
+        date: new Date()
     }
 
     changeBodyType = (bodyType) => {
         this.setState({ bodyType });
     }
 
+    setGloablDate = (date) => {
+        this.setState({ date });
+    }
+
     render() {
         return (
             <>
                 <CalendarHeader changeBodyType={this.changeBodyType} />
-                <CalendarBody bodyType={this.state.bodyType} />
+                <CalendarBody bodyType={this.state.bodyType} setGlobalDate={this.setGloablDate} date={this.state.date} />
             </>
         );
     }

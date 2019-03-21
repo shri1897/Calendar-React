@@ -6,8 +6,47 @@
     row-gap: 10px;
     background-color: #2b2b2b;
     overflow: hidden;
-  }
-  .monthContainer {
-    width: 290px;
-    height: 210px;
-  }
+}
+.monthContainer {
+  height: 160px;
+}
+.yearDetailContainer {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  background: #2b2b2b;
+  box-shadow: -2px 6px 13px 2px;
+  height: 8%;
+  margin-bottom: 20px;
+}
+.displayYear {
+  color: #1cd300;
+  font-size: 30px;
+  padding-left: 610px;
+}
+
+.yearSelector {
+    position: absolute;
+    right: 45px;
+    align-self: center;
+    flex-flow: row wrap;
+}
+
+.button {
+  color: #ffffff;
+  background-color: #303030;
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 75px;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  margin: 0px 1px 0px 1px;
+}
+
+.button:hover {
+  color: #56ff3b;
+  background-color: #202020;
+  font-size: 14px;
+}
